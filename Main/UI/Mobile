@@ -294,13 +294,14 @@ function Update:Window(text,logo,keybind)
     UserImageCorner.Parent = UserImage
 
     local Logo = Instance.new("ImageLabel")
-	Logo.Name = "Logo"
-	Logo.Parent = Main
-	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Logo.BackgroundTransparency = 1.000
-	Logo.Position = UDim2.new(0, -5, 0, -5)
-	Logo.Size = UDim2.new(0, 160, 0, 160)
-	Logo.Image = "rbxassetid://9906600154"
+    Logo.Name = "Logo"
+    Logo.Parent = Main
+    Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Logo.BackgroundTransparency = 1.000
+    Logo.Position = UDim2.new(0, -5, 0, -5)
+    Logo.Size = UDim2.new(0, 160, 0, 160)
+    Logo.Image = "rbxassetid://9906600154"
+
     local Tab = Instance.new("Frame")
     Tab.Name = "Tab"
     Tab.Parent = Main
@@ -1528,7 +1529,7 @@ function Update:Window(text,logo,keybind)
         UICorner.Parent = RealTextbox
     end
 
-    function main:Label(text)
+    function main:Label(text,Pos)
         local Label = Instance.new("TextLabel")
         local PaddingLabel = Instance.new("UIPadding")
         local labelfunc = {}
@@ -1542,7 +1543,7 @@ function Update:Window(text,logo,keybind)
         Label.TextColor3 = Color3.fromRGB(225, 225, 225)
         Label.TextSize = 16.000
         Label.Text = text
-        Label.TextXAlignment = Enum.TextXAlignment.Left
+        Label.TextXAlignment = Pos or Enum.TextXAlignment.Left
 
         PaddingLabel.PaddingLeft = UDim.new(0,15)
         PaddingLabel.Parent = Label
