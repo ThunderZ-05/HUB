@@ -195,4 +195,4 @@ function ThunderNotification(NotificationConfig)
     end)
 end
 
-return Library
+return ThunderNotification
