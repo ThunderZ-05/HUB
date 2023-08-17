@@ -197,12 +197,5 @@ function ThunderNotification(NotificationConfig)
         delay(5,function() NotificationBody:Destroy() end)
     end)
 end
-  
-ThunderNotification({
-    Title = "Key System",
-    Content = "Expired Key.",
-    Delay = 5
-})
-
 
 return ThunderNotification
