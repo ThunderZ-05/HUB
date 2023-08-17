@@ -50,16 +50,16 @@ function ThunderNotification(NotificationConfig)
         ZIndex = 1001,
     })
 
-    local DurationBar = Create("Frame", {
-        Parent = NotificationBody,
-        Size = UDim2.new(1, -24, 0, 3),
-        Position = UDim2.new(0, 12, 1, -12),
-        BackgroundColor3 = Color3.fromRGB(37, 37, 37),
-        BorderSizePixel = 0,
-        ZIndex = 1002,
-    }, {
-        Create("UICorner", {CornerRadius = UDim.new(0, 3)})
-    })
+   -- local DurationBar = Create("Frame", {
+       -- Parent = NotificationBody,
+       -- Size = UDim2.new(1, -24, 0, 3),
+       -- Position = UDim2.new(0, 12, 1, -12),
+      --  BackgroundColor3 = Color3.fromRGB(37, 37, 37),
+      --  BorderSizePixel = 0,
+       -- ZIndex = 1002,
+   -- }, {
+    --    Create("UICorner", {CornerRadius = UDim.new(0, 3)})
+    --})
 
     --local CloseButton = Create("TextButton", {
        -- Parent = NotificationBody,
@@ -146,6 +146,7 @@ function ThunderNotification(NotificationConfig)
             BackgroundColor3 = Color3.fromRGB(0, 99, 99),
             BorderSizePixel = 0,
             ZIndex = 1003,
+            Name = "DurationBar",
         }, {
             Create("UICorner", {CornerRadius = UDim.new(0, 3)})
         }),
@@ -172,8 +173,8 @@ function ThunderNotification(NotificationConfig)
 
     NotificationFrame.Size = UDim2.new(1, 0, 0, NotificationFrame.Content.TextBounds.Y + 42)
     TweenService:Create(NotificationBody,TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),{Size = UDim2.new(1, 0, 0, NotificationFrame.Content.TextBounds.Y + 48)}):Play()
-    TweenService:Create(DurationBar,TweenInfo.new(NotificationConfig.Delay, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{Size = UDim2.new(0, 0, 0, 3)}):Play()
-    TweenService:Create(DurationBar,TweenInfo.new(NotificationConfig.Delay, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{Size = UDim2.new(0, 0, 0, 3)}):Play()
+    TweenService:Create(NotificationFrame.DurationBar,TweenInfo.new(NotificationConfig.Delay, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{Size = UDim2.new(0, 0, 0, 3)}):Play()
+    TweenService:Create(NotificationFrame.DurationBar,TweenInfo.new(NotificationConfig.Delay, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{Size = UDim2.new(0, 0, 0, 3)}):Play()
     delay(0.15, function()
         TweenService:Create(NotificationFrame,TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),{Position = UDim2.new(0,0,0,5)}):Play()
     end)
@@ -186,6 +187,8 @@ function ThunderNotification(NotificationConfig)
         delay(5,function() NotificationBody:Destroy() end)
     end)
 
+    
+
     delay(NotificationConfig.Delay, function()
         TweenService:Create(NotificationFrame,TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),{Position = UDim2.new(1,15,0,5)}):Play()
         delay(0.15, function()
@@ -194,5 +197,12 @@ function ThunderNotification(NotificationConfig)
         delay(5,function() NotificationBody:Destroy() end)
     end)
 end
+  
+ThunderNotification({
+    Title = "Key System",
+    Content = "Expired Key.",
+    Delay = 5
+})
+
 
 return ThunderNotification
