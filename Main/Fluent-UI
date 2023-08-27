@@ -1,0 +1,12 @@
+--[[
+    Fluent UI Library
+    Author: dawid
+    License: MIT
+    GitHub: https://github.com/dawid-scripts/Fluent
+
+    richie0866/remote-spy - Assets for the UI, some of the code
+    violin-suzutsuki/LinoriaLib - Code for most of the elements, save manager
+    7kayoh/Acrylic - Porting richie0866's acrylic module to lua
+    Latte Softworks & Kotera - Bundler
+--]]
+
