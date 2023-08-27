@@ -5,7 +5,7 @@ local InterfaceManager = {} do
     InterfaceManager.Settings = {
         Theme = "Aqua",
         Acrylic = false,
-        Transparency = false,
+        Transparency = true,
         MenuKeybind = "Insert"
     }
 
