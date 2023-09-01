@@ -1,5 +1,1 @@
-if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/ThunderZ-05/HUB/main/Main/AimbotBF/PC.lua"))()
-  else
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/ThunderZ-05/HUB/main/Main/AimbotBF/Mobile.lua"))()
- end
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/ThundarZ/Welcome/main/Main/Loader/BloxFruitAimbot.lua"))()
